@@ -1,0 +1,11 @@
+{
+  "name": "frontend-project-lvl1-master",
+  "version": "1.0.0",
+  "description": "brain_game",
+  "main": "",
+  "bin": {
+    "brain-games": "./src/bin/brain-games.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
