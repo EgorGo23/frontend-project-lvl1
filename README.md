@@ -2,4 +2,4 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/f0368852f99fc4f86e20/maintainability)](https://codeclimate.com/github/EgorGo23/frontend-project-lvl1/maintainability)
 [![Build Status](https://travis-ci.org/EgorGo23/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/EgorGo23/frontend-project-lvl1)
 
-https://asciinema.org/a/o5ln1cEYFrVSy5lASIPX1v1La
+https://asciinema.org/a/G5YuHiuMvFXBkFSWN07M6fY52
