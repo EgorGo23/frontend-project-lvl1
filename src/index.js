@@ -9,7 +9,6 @@ const randomIntegerNumber = (min, max) => {
   return Math.floor(rand);
 };
 
-
 // eslint-disable-next-line consistent-return
 const bodyGameCalc = () => {
   const a = randomIntegerNumber(1, 100);
@@ -19,17 +18,17 @@ const bodyGameCalc = () => {
   if (sign === 1) {
     return {
       question: `${a} + ${b}`,
-      rightAnswer: a + b,
+      rightAnswer: `${a + b}`,
     };
   } if (sign === 2) {
     return {
       question: `${a} - ${b}`,
-      rightAnswer: a - b,
+      rightAnswer: `${a - b}`,
     };
   } if (sign === 3) {
     return {
       question: `${a} * ${b}`,
-      rightAnswer: a * b,
+      rightAnswer: `${a * b}`,
     };
   }
 };
@@ -51,12 +50,24 @@ const brainGcd = () => {
   const gcd = (x, y) => {
     // eslint-disable-next-line no-param-reassign
     while (y !== 0) y = x % (x = y);
-    return x;
+    return `${x}`;
   };
 
   return {
     question: `${a} ${b}`,
     rightAnswer: gcd(a, b),
+  };
+};
+
+const brainProgression = () => {
+  const progression = [5, 7, 9, 11, 13, 15, 17, 19, 21, 23];
+  const randomNumber = randomIntegerNumber(0, 9);
+
+  const rightAnswer = progression.splice(randomNumber, 1, '..').join();
+
+  return {
+    question: progression.join(' '),
+    rightAnswer,
   };
 };
 
@@ -84,7 +95,7 @@ const brainGame = (name, game) => {
       console.log(`Question: ${question}`);
       const response = userResponse();
 
-      if (rightAnswer !== +response) {
+      if (rightAnswer !== response) {
         console.log(`${response} is wrong answer ;(. Correct answer was ${rightAnswer}.
               Let's try again, ${name}!`);
         break;
@@ -99,7 +110,22 @@ const brainGame = (name, game) => {
       console.log(`Question: ${question}`);
       const response = userResponse();
 
-      if (rightAnswer !== +response) {
+      if (rightAnswer !== response) {
+        console.log(`${response} is wrong answer ;(. Correct answer was ${rightAnswer}.
+              Let's try again, ${name}!`);
+        break;
+      } else {
+        console.log('Correct!');
+        i += 1;
+      }
+    }
+    if (game === 'brain-progression') {
+      const { question, rightAnswer } = brainProgression();
+
+      console.log(`Question: ${question}`);
+      const response = userResponse();
+
+      if (rightAnswer !== response) {
         console.log(`${response} is wrong answer ;(. Correct answer was ${rightAnswer}.
               Let's try again, ${name}!`);
         break;
