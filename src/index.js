@@ -15,29 +15,34 @@ const bodyGameCalc = () => {
   const b = randomIntegerNumber(1, 100);
   const sign = randomIntegerNumber(1, 3);
 
-  if (sign === 1) {
-    return {
-      question: `${a} + ${b}`,
-      rightAnswer: `${a + b}`,
-    };
-  } if (sign === 2) {
-    return {
-      question: `${a} - ${b}`,
-      rightAnswer: `${a - b}`,
-    };
-  } if (sign === 3) {
-    return {
-      question: `${a} * ${b}`,
-      rightAnswer: `${a * b}`,
-    };
+  // eslint-disable-next-line default-case
+  switch (sign) {
+    case 1:
+      return {
+        question: `${a} + ${b}`,
+        rightAnswer: `${a + b}`,
+      };
+    case 2:
+      return {
+        question: `${a} - ${b}`,
+        rightAnswer: `${a - b}`,
+      };
+    case 3:
+      return {
+        question: `${a} * ${b}`,
+        rightAnswer: `${a * b}`,
+      };
   }
 };
 
-const bodyGameEven = () => {
+const brainEven = () => {
   const parityСheck = (num) => ((num % 2 === 0) ? 'yes' : 'no');
 
   const randomNum = randomIntegerNumber(1, 100);
-
+  console.log({
+    question: randomNum,
+    rightAnswer: parityСheck(randomNum),
+  });
   return {
     question: randomNum,
     rightAnswer: parityСheck(randomNum),
@@ -71,68 +76,55 @@ const brainProgression = () => {
   };
 };
 
+const brainPrime = () => {
+  const randomNumber = randomIntegerNumber(0, 200);
+
+  const isPrime = (num) => {
+    for (let i = 2; i <= Math.sqrt(num); i + 1) if (num % i === 0) return false;
+    return num > 1;
+  };
+  
+  return {
+    question: `${randomNumber}`,
+    rightAnswer: isPrime(randomNumber) ? 'yes' : 'no',
+  };
+};
+
 const brainGame = (name, game) => {
+  // eslint-disable-next-line one-var
+  let selectObj;
+
   let i = 1;
   while (i <= 3) {
-    if (game === 'brain-even') {
-      const { question, rightAnswer } = bodyGameEven();
-
-      console.log(`Question: ${question}`);
-      const response = userResponse();
-
-      if (rightAnswer !== response) {
-        console.log(`${response} is wrong answer ;(. Correct answer was ${rightAnswer}.
-              Let's try again, ${name}!`);
+    // eslint-disable-next-line default-case
+    switch (game) {
+      case 'brain-even':
+        selectObj = brainEven();
         break;
-      } else {
-        console.log('Correct!');
-        i += 1;
-      }
+      case 'brain-calc':
+        selectObj = bodyGameCalc();
+        break;
+      case 'brain-gcd':
+        selectObj = brainGcd();
+        break;
+      case 'brain-progression':
+        selectObj = brainProgression();
+        break;
+      case 'brain-prime':
+        selectObj = brainPrime();
+        break;
     }
-    if (game === 'brain-calc') {
-      const { question, rightAnswer } = bodyGameCalc();
 
-      console.log(`Question: ${question}`);
-      const response = userResponse();
+    console.log(`Question: ${selectObj.question}`);
+    const response = userResponse();
 
-      if (rightAnswer !== response) {
-        console.log(`${response} is wrong answer ;(. Correct answer was ${rightAnswer}.
-              Let's try again, ${name}!`);
-        break;
-      } else {
-        console.log('Correct!');
-        i += 1;
-      }
-    }
-    if (game === 'brain-gcd') {
-      const { question, rightAnswer } = brainGcd();
-
-      console.log(`Question: ${question}`);
-      const response = userResponse();
-
-      if (rightAnswer !== response) {
-        console.log(`${response} is wrong answer ;(. Correct answer was ${rightAnswer}.
-              Let's try again, ${name}!`);
-        break;
-      } else {
-        console.log('Correct!');
-        i += 1;
-      }
-    }
-    if (game === 'brain-progression') {
-      const { question, rightAnswer } = brainProgression();
-
-      console.log(`Question: ${question}`);
-      const response = userResponse();
-
-      if (rightAnswer !== response) {
-        console.log(`${response} is wrong answer ;(. Correct answer was ${rightAnswer}.
-              Let's try again, ${name}!`);
-        break;
-      } else {
-        console.log('Correct!');
-        i += 1;
-      }
+    if (selectObj.rightAnswer !== response) {
+      console.log(`${response} is wrong answer ;(. Correct answer was ${selectObj.rightAnswer}.
+        Let's try again, ${name}!`);
+      break;
+    } else {
+      console.log('Correct!');
+      i += 1;
     }
   }
   if (i === 4) {
