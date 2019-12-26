@@ -9,8 +9,19 @@ const randomIntegerNumber = (min, max) => {
   return Math.floor(rand);
 };
 
+const brainEven = () => {
+  const parityСheck = (num) => ((num % 2 === 0) ? 'yes' : 'no');
+
+  const randomNum = randomIntegerNumber(1, 100);
+
+  return {
+    question: randomNum,
+    rightAnswer: parityСheck(randomNum),
+  };
+};
+
 // eslint-disable-next-line consistent-return
-const bodyGameCalc = () => {
+const brainCalc = () => {
   const a = randomIntegerNumber(1, 100);
   const b = randomIntegerNumber(1, 100);
   const sign = randomIntegerNumber(1, 3);
@@ -33,17 +44,6 @@ const bodyGameCalc = () => {
         rightAnswer: `${a * b}`,
       };
   }
-};
-
-const brainEven = () => {
-  const parityСheck = (num) => ((num % 2 === 0) ? 'yes' : 'no');
-
-  const randomNum = randomIntegerNumber(1, 100);
-
-  return {
-    question: randomNum,
-    rightAnswer: parityСheck(randomNum),
-  };
 };
 
 const brainGcd = () => {
@@ -75,9 +75,13 @@ const brainProgression = () => {
 
 const brainPrime = () => {
   const randomNumber = randomIntegerNumber(0, 200);
-
   const isPrime = (num) => {
-    for (let i = 2; i <= Math.sqrt(num); i + 1) if (num % i === 0) return false;
+    for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+
     return num > 1;
   };
 
@@ -87,44 +91,44 @@ const brainPrime = () => {
   };
 };
 
-const brainGame = (name, game) => {
-  // eslint-disable-next-line one-var
-  let selectObj;
+const functionManager = (gameName) => {
+  let objectManager;
 
+  if (gameName === 'brain-even') {
+    objectManager = brainEven();
+  }
+  if (gameName === 'brain-calc') {
+    objectManager = brainCalc();
+  }
+  if (gameName === 'brain-gcd') {
+    objectManager = brainGcd();
+  }
+  if (gameName === 'brain-progression') {
+    objectManager = brainProgression();
+  }
+  if (gameName === 'brain-prime') {
+    objectManager = brainPrime();
+  }
+
+  return objectManager;
+};
+
+const brainGame = (name, game) => {
   let i = 0;
   while (i < 3) {
-    // eslint-disable-next-line default-case
-    switch (game) {
-      case 'brain-even':
-        selectObj = brainEven();
-        break;
-      case 'brain-calc':
-        selectObj = bodyGameCalc();
-        break;
-      case 'brain-gcd':
-        selectObj = brainGcd();
-        break;
-      case 'brain-progression':
-        selectObj = brainProgression();
-        break;
-      case 'brain-prime':
-        selectObj = brainPrime();
-        console.log(selectObj);
-        break;
-    }
+    const data = functionManager(game);
 
-    console.log(`Question: ${selectObj.question}`);
+    console.log(`Question: ${data.question}`);
     const response = userResponse();
 
-    if (selectObj.rightAnswer !== response) {
-      console.log(`${response} is wrong answer ;(. Correct answer was ${selectObj.rightAnswer}.
+    if (data.rightAnswer !== response) {
+      console.log(`${response} is wrong answer ;(. Correct answer was ${data.rightAnswer}.
         Let's try again, ${name}!`);
       break;
-    } else {
-      console.log('Correct!');
-      i += 1;
     }
-    console.log(i);
+
+    console.log('Correct!');
+    i += 1;
   }
   if (i === 3) {
     console.log(`Congratulations, ${name}!`);
