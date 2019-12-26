@@ -76,6 +76,7 @@ const brainProgression = () => {
 const brainPrime = () => {
   const randomNumber = randomIntegerNumber(0, 200);
   const isPrime = (num) => {
+    // eslint-disable-next-line no-plusplus
     for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
       if (num % i === 0) {
         return false;
