@@ -39,10 +39,7 @@ const brainEven = () => {
   const parityСheck = (num) => ((num % 2 === 0) ? 'yes' : 'no');
 
   const randomNum = randomIntegerNumber(1, 100);
-  console.log({
-    question: randomNum,
-    rightAnswer: parityСheck(randomNum),
-  });
+
   return {
     question: randomNum,
     rightAnswer: parityСheck(randomNum),
@@ -83,7 +80,7 @@ const brainPrime = () => {
     for (let i = 2; i <= Math.sqrt(num); i + 1) if (num % i === 0) return false;
     return num > 1;
   };
-  
+
   return {
     question: `${randomNumber}`,
     rightAnswer: isPrime(randomNumber) ? 'yes' : 'no',
@@ -94,8 +91,8 @@ const brainGame = (name, game) => {
   // eslint-disable-next-line one-var
   let selectObj;
 
-  let i = 1;
-  while (i <= 3) {
+  let i = 0;
+  while (i < 3) {
     // eslint-disable-next-line default-case
     switch (game) {
       case 'brain-even':
@@ -112,6 +109,7 @@ const brainGame = (name, game) => {
         break;
       case 'brain-prime':
         selectObj = brainPrime();
+        console.log(selectObj);
         break;
     }
 
@@ -126,8 +124,9 @@ const brainGame = (name, game) => {
       console.log('Correct!');
       i += 1;
     }
+    console.log(i);
   }
-  if (i === 4) {
+  if (i === 3) {
     console.log(`Congratulations, ${name}!`);
   }
 };
