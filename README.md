@@ -2,17 +2,21 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/f0368852f99fc4f86e20/maintainability)](https://codeclimate.com/github/EgorGo23/frontend-project-lvl1/maintainability)
 [![Build Status](https://travis-ci.org/EgorGo23/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/EgorGo23/frontend-project-lvl1)
 
-# brain-even
-https://asciinema.org/a/NBpztuDzhQ2X30wUKg8SAYTVl
+# Installation
+https://asciinema.org/a/vZgvXF0z1Btxx4IF5qITEIuCy
 
-# brain-calc 
-https://asciinema.org/a/A3HBEqiGg1fJrKgvB8WfZyo42
+# brain-even
+https://asciinema.org/a/5NB2cXIP9wo9nOYP7nIWILBam
+
+# brain-calc
+https://asciinema.org/a/uovExzJyokfy4yy9Dz8zqAwgZ
 
 # brain-gcd
-https://asciinema.org/a/iV5uTx4ghKzoaJlFX1Zmy2DUB
+https://asciinema.org/a/LZIzMdd7RaaGIlEGag7qbxB6s
 
-# brain-progression
-https://asciinema.org/a/Q64Y3sMzBCQGFHIvluY30UiRv
+#brain-progression
+https://asciinema.org/a/EMrkCtp1Myvu73zR9t2bf2OAZ
 
-# brain-prime
-https://asciinema.org/a/ddYC3CHQJ1lFcWalVwn3eFrpq
+#brain-prime
+https://asciinema.org/a/Mat875mX642HmkRbDpMN52NJS
+
