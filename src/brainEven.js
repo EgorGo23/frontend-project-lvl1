@@ -6,6 +6,7 @@ const brainEven = () => {
   const randomNum = randomIntegerNumber(1, 100);
 
   return {
+    greeting: 'Answer "yes" if the number is even, otherwise answer "no".',
     question: randomNum,
     rightAnswer: parityСheck(randomNum),
   };

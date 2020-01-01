@@ -7,6 +7,7 @@ const brainProgression = () => {
   const rightAnswer = progression.splice(randomNumber, 1, '..').join();
 
   return {
+    greeting: 'What number is missing in the progression?',
     question: progression.join(' '),
     rightAnswer,
   };

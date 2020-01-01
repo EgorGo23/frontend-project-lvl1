@@ -10,16 +10,19 @@ const brainCalc = () => {
   switch (sign) {
     case 1:
       return {
+        greeting: 'What is the result of the expression?',
         question: `${a} + ${b}`,
         rightAnswer: `${a + b}`,
       };
     case 2:
       return {
+        greeting: 'What is the result of the expression?',
         question: `${a} - ${b}`,
         rightAnswer: `${a - b}`,
       };
     case 3:
       return {
+        greeting: 'What is the result of the expression?',
         question: `${a} * ${b}`,
         rightAnswer: `${a * b}`,
       };

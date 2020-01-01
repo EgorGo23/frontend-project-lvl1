@@ -14,6 +14,7 @@ const brainPrime = () => {
   };
 
   return {
+    greeting: 'Answer "yes" if given number is prime. Otherwise answer "no".',
     question: `${randomNumber}`,
     rightAnswer: isPrime(randomNumber) ? 'yes' : 'no',
   };

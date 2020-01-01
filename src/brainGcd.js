@@ -10,6 +10,7 @@ const brainGcd = () => {
   };
 
   return {
+    greeting: 'Find the greatest common divisor of given numbers.',
     question: `${a} ${b}`,
     rightAnswer: gcd(a, b),
   };

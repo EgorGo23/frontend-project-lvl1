@@ -31,7 +31,14 @@ const functionManager = (gameName) => {
   return objectManager;
 };
 
-const brainGame = (name, game) => {
+const brainGame = (game) => {
+  console.log('Welcome to the Brain Games!');
+  const { greeting } = functionManager(game);
+  console.log(greeting);
+
+  const name = userName();
+  console.log(`Hello, ${name}`);
+
   let i = 0;
   while (i < 3) {
     const data = functionManager(game);
@@ -53,4 +60,4 @@ const brainGame = (name, game) => {
   }
 };
 
-export { userName, brainGame };
+export default brainGame;
