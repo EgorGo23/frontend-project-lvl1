@@ -4,29 +4,21 @@ import randomIntegerNumber from './randomIntegerNumber';
 const brainCalc = () => {
   const a = randomIntegerNumber(1, 100);
   const b = randomIntegerNumber(1, 100);
-  const sign = randomIntegerNumber(1, 3);
 
-  // eslint-disable-next-line default-case
-  switch (sign) {
-    case 1:
-      return {
-        greeting: 'What is the result of the expression?',
-        question: `${a} + ${b}`,
-        rightAnswer: `${a + b}`,
-      };
-    case 2:
-      return {
-        greeting: 'What is the result of the expression?',
-        question: `${a} - ${b}`,
-        rightAnswer: `${a - b}`,
-      };
-    case 3:
-      return {
-        greeting: 'What is the result of the expression?',
-        question: `${a} * ${b}`,
-        rightAnswer: `${a * b}`,
-      };
-  }
+  const computedExpressions = {
+    '+': `${a + b}`,
+    '-': `${a - b}`,
+    '*': `${a * b}`,
+  };
+
+  const operations = Object.keys(computedExpressions);
+  const randomOperation = operations[randomIntegerNumber(0, operations.length - 1)];
+
+  return {
+    greeting: 'What is the result of the expression?',
+    question: `${a} ${randomOperation} ${b}`,
+    rightAnswer: `${computedExpressions[randomOperation]}`,
+  };
 };
 
 export default brainCalc;
