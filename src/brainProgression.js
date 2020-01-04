@@ -2,7 +2,7 @@ import randomIntegerNumber from './randomIntegerNumber';
 
 const progressionGeneration = (numberOfElements) => {
   const firstElement = randomIntegerNumber(1, 500);
-  const step = randomIntegerNumber(0, numberOfElements);
+  const step = randomIntegerNumber(2, numberOfElements);
 
   // eslint-disable-next-line prefer-const
   let progression = [firstElement];
