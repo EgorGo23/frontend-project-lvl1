@@ -3,20 +3,20 @@
 [![Build Status](https://travis-ci.org/EgorGo23/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/EgorGo23/frontend-project-lvl1)
 
 # Installation
-https://asciinema.org/a/vZgvXF0z1Btxx4IF5qITEIuCy
+https://asciinema.org/a/292551
 
 # brain-even
-https://asciinema.org/a/5NB2cXIP9wo9nOYP7nIWILBam
+https://asciinema.org/a/292554
 
 # brain-calc
-https://asciinema.org/a/uovExzJyokfy4yy9Dz8zqAwgZ
+https://asciinema.org/a/292555
 
 # brain-gcd
-https://asciinema.org/a/LZIzMdd7RaaGIlEGag7qbxB6s
+https://asciinema.org/a/292556
 
 # brain-progression
-https://asciinema.org/a/EMrkCtp1Myvu73zR9t2bf2OAZ
+https://asciinema.org/a/292557
 
 # brain-prime
-https://asciinema.org/a/Mat875mX642HmkRbDpMN52NJS
+https://asciinema.org/a/292560
 
