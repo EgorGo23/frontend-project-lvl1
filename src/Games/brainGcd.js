@@ -1,9 +1,11 @@
-import randomIntegerNumber from './randomIntegerNumber';
+import randomIntegerNumber from '../randomIntegerNumber';
+import brainGame from '..';
 
 const gcd = (x, y) => {
-  // eslint-disable-next-line no-param-reassign
-  while (y !== 0) y = x % (x = y);
-  return `${x}`;
+  if (!y) {
+    return x;
+  }
+  return gcd(y, x % y);
 };
 
 const brainGcd = () => {
@@ -13,8 +15,8 @@ const brainGcd = () => {
   return {
     greeting: 'Find the greatest common divisor of given numbers.',
     question: `${a} ${b}`,
-    rightAnswer: gcd(a, b),
+    rightAnswer: `${gcd(a, b)}`,
   };
 };
 
-export default brainGcd;
+export default () => brainGame(brainGcd);

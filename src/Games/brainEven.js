@@ -1,4 +1,5 @@
-import randomIntegerNumber from './randomIntegerNumber';
+import randomIntegerNumber from '../randomIntegerNumber';
+import brainGame from '..';
 
 const isEven = (num) => ((num % 2 === 0));
 
@@ -12,4 +13,4 @@ const brainEven = () => {
   };
 };
 
-export default brainEven;
+export default () => brainGame(brainEven);

@@ -1,8 +1,8 @@
-import randomIntegerNumber from './randomIntegerNumber';
+import randomIntegerNumber from '../randomIntegerNumber';
+import brainGame from '..';
 
 const isPrime = (num) => {
-  // eslint-disable-next-line no-plusplus
-  for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
+  for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) {
     if (num % i === 0) {
       return false;
     }
@@ -20,4 +20,4 @@ const brainPrime = () => {
   };
 };
 
-export default brainPrime;
+export default () => brainGame(brainPrime);

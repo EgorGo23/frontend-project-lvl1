@@ -1,6 +1,7 @@
-import randomIntegerNumber from './randomIntegerNumber';
+import randomIntegerNumber from '../randomIntegerNumber';
+import brainGame from '..';
 
-// eslint-disable-next-line consistent-return
+
 const brainCalc = () => {
   const a = randomIntegerNumber(1, 100);
   const b = randomIntegerNumber(1, 100);
@@ -21,4 +22,4 @@ const brainCalc = () => {
   };
 };
 
-export default brainCalc;
+export default () => brainGame(brainCalc);

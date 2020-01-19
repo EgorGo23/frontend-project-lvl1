@@ -1,11 +1,11 @@
-import randomIntegerNumber from './randomIntegerNumber';
+import randomIntegerNumber from '../randomIntegerNumber';
+import brainGame from '..';
 
 const progressionGeneration = (numberOfElements) => {
   const firstElement = randomIntegerNumber(1, 500);
   const step = randomIntegerNumber(2, numberOfElements);
 
-  // eslint-disable-next-line prefer-const
-  let progression = [firstElement];
+  const progression = [firstElement];
   for (let i = 1; i < numberOfElements; i += 1) {
     progression.push(firstElement + i * step);
   }
@@ -26,4 +26,4 @@ const brainProgression = () => {
   };
 };
 
-export default brainProgression;
+export default () => brainGame(brainProgression);
