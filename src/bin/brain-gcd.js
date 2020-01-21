@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import brainGcd from '../Games/brainGcd';
+import generateGameDataObject from '../Games/brainGcd';
 
-brainGcd();
+generateGameDataObject();

@@ -1,5 +1,5 @@
 import randomIntegerNumber from '../randomIntegerNumber';
-import brainGame from '..';
+import generateGame from '..';
 
 const gcd = (x, y) => {
   if (!y) {
@@ -8,15 +8,16 @@ const gcd = (x, y) => {
   return gcd(y, x % y);
 };
 
-const brainGcd = () => {
+const task = 'Find the greatest common divisor of given numbers.';
+
+const generateGameDataObject = () => {
   const a = randomIntegerNumber(1, 100);
   const b = randomIntegerNumber(1, 100);
 
   return {
-    greeting: 'Find the greatest common divisor of given numbers.',
     question: `${a} ${b}`,
-    rightAnswer: `${gcd(a, b)}`,
+    rightAnswer: gcd(a, b).toString(),
   };
 };
 
-export default () => brainGame(brainGcd);
+export default () => generateGame(generateGameDataObject, task);

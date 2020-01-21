@@ -1,16 +1,17 @@
 import randomIntegerNumber from '../randomIntegerNumber';
-import brainGame from '..';
+import generateGame from '..';
 
-const isEven = (num) => ((num % 2 === 0));
+const isEven = (num) => (num % 2 === 0);
 
-const brainEven = () => {
+const task = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const generateGameDataObject = () => {
   const randomNum = randomIntegerNumber(1, 100);
 
   return {
-    greeting: 'Answer "yes" if the number is even, otherwise answer "no".',
     question: randomNum,
     rightAnswer: (isEven(randomNum) === true) ? 'yes' : 'no',
   };
 };
 
-export default () => brainGame(brainEven);
+export default () => generateGame(generateGameDataObject, task);

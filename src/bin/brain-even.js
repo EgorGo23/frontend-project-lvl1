@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import brainEven from '../Games/brainEven';
+import generateGameDataObject from '../Games/brainEven';
 
-brainEven();
+generateGameDataObject();

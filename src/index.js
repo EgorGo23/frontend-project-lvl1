@@ -6,16 +6,14 @@ const userResponse = () => readlineSync.question('Your answer: ');
 
 const numberOfRounds = 3;
 
-const brainGame = (game) => {
+const generateGame = (game, gameTask) => {
   console.log('Welcome to the Brain Games!');
-  const { greeting } = game();
-  console.log(greeting);
+  console.log(gameTask);
 
   const name = userName();
   console.log(`Hello, ${name}`);
 
-  let roundCounter = 0;
-  while (roundCounter < numberOfRounds) {
+  for (let roundCounter = 0; roundCounter < numberOfRounds; roundCounter += 1) {
     const data = game();
 
     console.log(`Question: ${data.question}`);
@@ -28,11 +26,11 @@ const brainGame = (game) => {
     }
 
     console.log('Correct!');
-    roundCounter += 1;
-  }
-  if (roundCounter === numberOfRounds) {
-    console.log(`Congratulations, ${name}!`);
+
+    if (roundCounter === numberOfRounds - 1) {
+      console.log(`Congratulations, ${name}!`);
+    }
   }
 };
 
-export default brainGame;
+export default generateGame;

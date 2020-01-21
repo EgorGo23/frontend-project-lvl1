@@ -15,4 +15,4 @@ publication:
 	npm publish --dry-run
 
 lint:
-	npx eslint src/index.js
+	npx eslint src

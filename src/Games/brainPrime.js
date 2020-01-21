@@ -1,23 +1,29 @@
 import randomIntegerNumber from '../randomIntegerNumber';
-import brainGame from '..';
+import generateGame from '..';
 
 const isPrime = (num) => {
-  for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) {
-    if (num % i === 0) {
-      return false;
-    }
+  if (num === 1) return false;
+
+  if (num <= 3) return true;
+
+  if (num % 2 === 0 || num % 3 === 0) return false;
+
+  for (let i = 5; i * i <= num; i += 6) {
+    if (num % i === 0 || num % (i + 2) === 0) return false;
   }
-  return num > 1;
+
+  return true;
 };
 
-const brainPrime = () => {
+const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const generateGameDataObject = () => {
   const randomNumber = randomIntegerNumber(0, 200);
 
   return {
-    greeting: 'Answer "yes" if given number is prime. Otherwise answer "no".',
     question: `${randomNumber}`,
     rightAnswer: isPrime(randomNumber) ? 'yes' : 'no',
   };
 };
 
-export default () => brainGame(brainPrime);
+export default () => generateGame(generateGameDataObject, task);

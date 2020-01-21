@@ -1,8 +1,7 @@
 import randomIntegerNumber from '../randomIntegerNumber';
-import brainGame from '..';
+import generateGame from '..';
 
-const progressionGeneration = (numberOfElements) => {
-  const firstElement = randomIntegerNumber(1, 500);
+const progressionGeneration = (numberOfElements, firstElement) => {
   const step = randomIntegerNumber(2, numberOfElements);
 
   const progression = [firstElement];
@@ -13,17 +12,21 @@ const progressionGeneration = (numberOfElements) => {
   return progression;
 };
 
-const brainProgression = () => {
-  const progression = progressionGeneration(10);
+const task = 'What number is missing in the progression?';
+
+const progressionLength = 10;
+
+const generateGameDataObject = () => {
+  const firstElementOfProgression = randomIntegerNumber(1, 500);
+  const progression = progressionGeneration(progressionLength, firstElementOfProgression);
   const randomNumber = randomIntegerNumber(0, progression.length - 1);
 
   const rightAnswer = progression.splice(randomNumber, 1, '..').join();
 
   return {
-    greeting: 'What number is missing in the progression?',
     question: progression.join(' '),
     rightAnswer,
   };
 };
 
-export default () => brainGame(brainProgression);
+export default () => generateGame(generateGameDataObject, task);
