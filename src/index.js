@@ -13,7 +13,7 @@ const generateGame = (game, gameTask) => {
   const name = userName();
   console.log(`Hello, ${name}`);
 
-  for (let roundCounter = 0; roundCounter < numberOfRounds; roundCounter += 1) {
+  for (let i = 0; i < numberOfRounds; i += 1) {
     const data = game();
 
     console.log(`Question: ${data.question}`);
@@ -22,15 +22,13 @@ const generateGame = (game, gameTask) => {
     if (data.rightAnswer !== response) {
       console.log(`${response} is wrong answer ;(. Correct answer was ${data.rightAnswer}.
         Let's try again, ${name}!`);
-      break;
+      return;
     }
 
     console.log('Correct!');
-
-    if (roundCounter === numberOfRounds - 1) {
-      console.log(`Congratulations, ${name}!`);
-    }
   }
+
+  console.log(`Congratulations, ${name}!`);
 };
 
 export default generateGame;
