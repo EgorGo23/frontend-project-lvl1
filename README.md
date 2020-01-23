@@ -16,27 +16,26 @@ This is an NPM package so nodejs is required for the game.
 # Installation
 	make install
 	make publication
-	npm link
-	
-	<script id="asciicast-292551" src="https://asciinema.org/a/292551.js" async></script>
+	npm link	
+[![asciicast](https://asciinema.org/a/292551.svg)](https://asciinema.org/a/292551)
 
 # brain-even
 	brain-even
-https://asciinema.org/a/292554
+[![asciicast](https://asciinema.org/a/292554.svg)](https://asciinema.org/a/292554)
 
 # brain-calc
 	brain-calc
-https://asciinema.org/a/292555
+[![asciicast](https://asciinema.org/a/292555.svg)](https://asciinema.org/a/292555)
 
 # brain-gcd
 	brain-gcd
-https://asciinema.org/a/292556
+[![asciicast](https://asciinema.org/a/292556.svg)](https://asciinema.org/a/292556)
 
 # brain-progression
 	brain-progression
-https://asciinema.org/a/292557
+[![asciicast](https://asciinema.org/a/292557.svg)](https://asciinema.org/a/292557)
 
 # brain-prime
 	brain-prime
-https://asciinema.org/a/292560
+[![asciicast](https://asciinema.org/a/292560.svg)](https://asciinema.org/a/292560)
 
