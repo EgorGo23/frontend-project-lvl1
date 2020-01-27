@@ -20,8 +20,8 @@ const generateGame = (game, gameTask) => {
     const response = userResponse();
 
     if (data.rightAnswer !== response) {
-      console.log(`${response} is wrong answer ;(. Correct answer was ${data.rightAnswer}.
-        Let's try again, ${name}!`);
+      console.log(`${response} is wrong answer ;(. Correct answer was ${data.rightAnswer}.`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
 

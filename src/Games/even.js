@@ -5,7 +5,7 @@ const isEven = (num) => (num % 2 === 0);
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const generateGameDataObject = () => {
+const generateGameData = () => {
   const randomNum = randomIntegerNumber(1, 100);
 
   return {
@@ -14,4 +14,4 @@ const generateGameDataObject = () => {
   };
 };
 
-export default () => generateGame(generateGameDataObject, task);
+export default () => generateGame(generateGameData, task);

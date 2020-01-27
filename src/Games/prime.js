@@ -4,15 +4,15 @@ import generateGame from '..';
 const isPrime = (num) => {
   if (num <= 1) return false;
 
-  for (let i = 2; i < num; i += 1) {
+  for (let i = 2; i <= Math.floor(num / 2); i += 1) {
     if (num % i === 0) return false;
   }
-  return num > 1;
+  return true;
 };
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const generateGameDataObject = () => {
+const generateGameData = () => {
   const randomNumber = randomIntegerNumber(0, 200);
 
   return {
@@ -21,4 +21,4 @@ const generateGameDataObject = () => {
   };
 };
 
-export default () => generateGame(generateGameDataObject, task);
+export default () => generateGame(generateGameData, task);
