@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import generateGameData from '../Games/prime';
+import startGamePrime from '../Games/prime';
 
-generateGameData();
+startGamePrime();

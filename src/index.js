@@ -6,7 +6,7 @@ const userResponse = () => readlineSync.question('Your answer: ');
 
 const numberOfRounds = 3;
 
-const generateGame = (game, gameTask) => {
+const generateGame = (getGameData, gameTask) => {
   console.log('Welcome to the Brain Games!');
   console.log(gameTask);
 
@@ -14,7 +14,7 @@ const generateGame = (game, gameTask) => {
   console.log(`Hello, ${name}`);
 
   for (let i = 0; i < numberOfRounds; i += 1) {
-    const data = game();
+    const data = getGameData();
 
     console.log(`Question: ${data.question}`);
     const response = userResponse();

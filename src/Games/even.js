@@ -1,4 +1,4 @@
-import randomIntegerNumber from '../randomIntegerNumber';
+import randomInteger from '../randomInteger';
 import generateGame from '..';
 
 const isEven = (num) => (num % 2 === 0);
@@ -6,7 +6,7 @@ const isEven = (num) => (num % 2 === 0);
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const generateGameData = () => {
-  const randomNum = randomIntegerNumber(1, 100);
+  const randomNum = randomInteger(1, 100);
 
   return {
     question: randomNum,

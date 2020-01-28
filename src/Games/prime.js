@@ -1,10 +1,10 @@
-import randomIntegerNumber from '../randomIntegerNumber';
+import randomInteger from '../randomInteger';
 import generateGame from '..';
 
 const isPrime = (num) => {
   if (num <= 1) return false;
 
-  for (let i = 2; i <= Math.floor(num / 2); i += 1) {
+  for (let i = 2; i <= num / 2; i += 1) {
     if (num % i === 0) return false;
   }
   return true;
@@ -13,7 +13,7 @@ const isPrime = (num) => {
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const generateGameData = () => {
-  const randomNumber = randomIntegerNumber(0, 200);
+  const randomNumber = randomInteger(0, 200);
 
   return {
     question: `${randomNumber}`,
