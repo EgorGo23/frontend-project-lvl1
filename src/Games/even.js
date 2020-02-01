@@ -10,7 +10,7 @@ const generateGameData = () => {
 
   return {
     question: randomNum,
-    rightAnswer: (isEven(randomNum) === true) ? 'yes' : 'no',
+    rightAnswer: isEven(randomNum) ? 'yes' : 'no',
   };
 };
 

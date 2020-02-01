@@ -18,9 +18,9 @@ const generateGameData = () => {
   const firstElementOfProgression = randomInteger(1, 500);
   const progressionStep = randomInteger(2, progressionLength);
   const progression = getProgression(progressionLength, firstElementOfProgression, progressionStep);
-  const randomProgressionElementIndex = randomInteger(0, progression.length - 1);
+  const hiddenElementIndex = randomInteger(0, progression.length - 1);
 
-  const rightAnswer = progression.splice(randomProgressionElementIndex, 1, '..').join();
+  const rightAnswer = progression.splice(hiddenElementIndex, 1, '..').join();
 
   return {
     question: progression.join(' '),

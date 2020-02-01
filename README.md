@@ -16,7 +16,7 @@ This is an NPM package so nodejs is required for the game.
 # Installation
 	make install
 	make publication
-	npm link	
+	make link	
 [![asciicast](https://asciinema.org/a/292551.svg)](https://asciinema.org/a/292551)
 
 # brain-even
